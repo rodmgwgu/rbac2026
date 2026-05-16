@@ -54,6 +54,9 @@ I've been tinkering with **Open Source Software** since **2006**.
     <a href="https://github.com/rodmg" target="_blank" class="flex items-center gap-2 text-sm">
       <carbon-logo-github /> rodmg
     </a>
+    <a href="https://www.linkedin.com/in/rodrigo-méndez-gamboa-5173a0164/" target="_blank" class="flex items-center gap-2 text-sm">
+      <carbon-logo-linkedin /> rodrigo-méndez-gamboa
+    </a>
   </div>
 </div>
 
@@ -495,6 +498,10 @@ layout: section
 
 # But wait, where is the code?
 
+<div class="flex items-center justify-center h-100">
+  <img src="/video/mrbean.webp" class="w-160 mt--8">
+</div>
+
 ---
 
 # openedx-authz
@@ -616,31 +623,29 @@ The Hook is planned to be moved to frontend-base
  -->
 
 ---
-layout: two-cols-header
----
 
 # Available permissions and roles
 
 Reference for developers
 
-::left::
+<div class="flex gap-18 items-center justify-center h-80">
+  <a href="https://openedx.atlassian.net/wiki/spaces/OEPM/pages/5528715266/openedx-authz+permission+list" target="_blank" class="flex flex-col items-center no-underline">
+    <img src="/qr/permissions-wiki.png" class="w-52" />
+    <div class="flex items-center gap-3 mt-2">
+      <carbon-wikis class="text-blue-950 font-size-2xl flex-shrink-0" />
+      <span class="text-sm"><b>Wiki</b> — Permission list</span>
+    </div>
+  </a>
 
-<div class="flex items-center gap-3 mb-5">
-<carbon-wikis class="text-[#00BBF9] font-size-2xl flex-shrink-0" />
-<span><b>Wiki</b> — <a href="https://openedx.atlassian.net/wiki/spaces/OEPM/pages/5528715266/openedx-authz+permission+list" target="_blank">Permission list reference</a></span>
-</div>
+  <img src="/permissionslist.png" class="h-100 rounded-lg border border-gray-200" />
 
-<div class="flex items-center gap-3 mb-2">
-<carbon-logo-github class="text-[#00BBF9] font-size-2xl flex-shrink-0" />
-<span><b><code>openedx-authz</code></b> — <code>/openedx_authz/engine/config/authz.policy</code></span>
-</div>
-
-<p class="text-xs text-[#476480] italic ml-9">* Temporary location, subject to change</p>
-
-::right::
-
-<div class="flex items-center justify-center h-full">
-<img src="/permissionslist.png" class="h-100 m-auto mt--10" />
+  <a href="https://github.com/openedx/openedx-authz/blob/main/openedx_authz/engine/config/authz.policy" target="_blank" class="flex flex-col items-center no-underline">
+    <img src="/qr/authz-policy.png" class="w-52" />
+    <div class="flex items-center gap-3 mt-2">
+      <carbon-logo-github class="text-blue-950 font-size-2xl flex-shrink-0" />
+      <span class="text-sm"><code>authz.policy</code></span>
+    </div>
+  </a>
 </div>
 
 ---
@@ -648,6 +653,10 @@ layout: section
 ---
 
 # Going Deeper
+
+<div class="flex items-center justify-center h-100">
+  <img src="/iceberg.png" class="w-150 mt--8">
+</div>
 
 ---
 
@@ -759,6 +768,12 @@ level: 2
 | g | aleidacortez  | course_admin  | course-v1:OpenedX+*            |       |
 
 ---
+layout: api-section
+---
+
+# Wrapping up
+
+---
 
 # Next steps
 After Verawood
@@ -796,13 +811,33 @@ After Verawood
 
 # How to contribute
 
-Link and QR to openedx-authz
+<div class="flex gap-32 items-center justify-center h-100 pb-18">
+  <a href="https://github.com/openedx/openedx-authz" target="_blank" class="flex flex-col items-center no-underline">
+    <img src="/qr/openedx-authz.png" class="w-60" />
+    <div class="flex items-center gap-3">
+      <carbon-logo-github class="text-blue-950 font-size-2xl flex-shrink-0" />
+      <code>openedx-authz</code>
+    </div>
+  </a>
+
+  <a href="https://github.com/openedx/frontend-app-admin-console" target="_blank" class="flex flex-col items-center no-underline">
+    <img src="/qr/frontend-app-admin-console.png" class="w-60" />
+    <div class="flex items-center gap-3">
+      <carbon-logo-github class="text-blue-950 font-size-2xl flex-shrink-0" />
+      <code>frontend-app-admin-console</code>
+    </div>
+  </a>
+</div>
 
 ---
+layout: api-section
+---
 
-# Thank you
+# Thank you!
 
-Add QR
+Questions? Feedback? Find me after the talk.
+
+<img src="/qr/sessionizefeedback.png" class="w-64 mt-4 -mb-10vh" />
 
 ---
 
