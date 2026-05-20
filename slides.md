@@ -20,12 +20,15 @@ A Developer’s Guide to the New RBAC AuthZ System.
 
 **Rodrigo Mendez** - Staff Software Engineer @ **WGU**
 
+<div class="flex flex-row items-start gap-2 pt-3">
+  <small class="bg-blue-950 px-1">https://rodmgwgu.github.io/rbac2026</small>
+  <img src="/qr/rbac2026.png" class="w-32" />
+</div>
+
 <div class="absolute bottom-32 right-8 flex flex-col items-end justify-end gap-4">
   <img src="/wgu-logo.png" class="h-24 box-content py-4" />
   <img src="/rgb-logo-open-edx-2026-horizontal.svg" class="h-24 box-content py-4" />
 </div>
-
-
 
 ---
 layout: two-cols
@@ -489,9 +492,6 @@ layout: two-cols-header
 <img src="/rbac.png" class="h-110 m-auto mt--12" />
 </div>
 
-
-<!-- - Create diagram, showing relationships between permissions, roles, and subject-scope thorough an assignation -->
-
 ---
 layout: section
 ---
@@ -503,32 +503,96 @@ layout: section
 </div>
 
 ---
+layout: two-cols
+---
 
 # openedx-authz
 
+::left::
+
+<div class="flex items-center gap-3 mb-5">
+<carbon-logo-python class="text-[#00BBF9] font-size-2xl flex-shrink-0" />
+<span>A <b>Django module</b></span>
+</div>
+
+<div class="flex items-center gap-3 mb-5">
+<carbon-api class="text-[#00BBF9] font-size-2xl flex-shrink-0" />
+<span><b>Standard authorization API</b> across the platform</span>
+</div>
+
+<div class="flex items-center gap-3 mb-5">
+<carbon-plug class="text-[#00BBF9] font-size-2xl flex-shrink-0" />
+<span>Any module can <b>define and check</b> granular permissions</span>
+</div>
+
+<div class="flex items-center gap-3 mb-5">
+<carbon-code class="text-[#00BBF9] font-size-2xl flex-shrink-0" />
+<span>Provides a <b>Python API</b> for other Django/Python modules</span>
+</div>
+
+<div class="flex items-center gap-3 mb-5">
+<carbon-cloud class="text-[#00BBF9] font-size-2xl flex-shrink-0" />
+<span>Provides a <b>REST API</b> for MFEs</span>
+</div>
+
+<div class="flex items-center gap-3">
+<carbon-user-admin class="text-[#00BBF9] font-size-2xl flex-shrink-0" />
+<span>Role assignments managed via <code>frontend-app-admin-console</code></span>
+</div>
+
+::right::
+
+<div class="flex flex-col items-center justify-center h-full">
+  <a href="https://github.com/openedx/openedx-authz" target="_blank" class="flex flex-col items-center no-underline">
+    <img src="/qr/openedx-authz.png" class="w-60" />
+    <div class="flex items-center gap-3">
+      <carbon-logo-github class="text-blue-950 font-size-2xl flex-shrink-0" />
+      <code>openedx-authz</code>
+    </div>
+  </a>
+</div>
+
+<!--
 openedx-authz is a library that aims to imlpement the Open edX authorization layer as a single, standard set of APIs and concepts to be used across the platform.
 
 openedx-platform and any other module that wishes to implement granular permissions can define a set of permissions and roles, define those in openedx-authz, and implement the permission checks on their code using the easy-to-use openedx-authz API.
 
-User-role assignment is managed by openedx-authz via frontend-app-admin-console.
+User-role assignment is managed by openedx-authz via frontend-app-admin-console. 
+ -->
 
 ---
 
-# openedx-authz relationships
+# Where openedx-authz fits
 
-```mermaid {scale: 0.75}
-graph TD
-  authz[openedx-authz]
+<div class="flex justify-center h-full">
+
+```mermaid {scale: 0.9}
+---
+config:
+  theme: base
+  themeVariables:
+    primaryColor: '#7EDCFC'
+    primaryTextColor: '#07223C'
+    primaryBorderColor: '#092B4D'
+    lineColor: '#092B4D'
+    secondaryColor: '#FFEE88'
+    tertiaryColor: '#CED6DD'
+    fontFamily: 'Inter'
+---
+graph LR
   platform[openedx-platform]
-  modules[Other Modules]
+  modules[Other Python modules]
+  authz[openedx-authz]
   admin[frontend-app-admin-console]
+  mfes[MFEs]
 
-  platform -->|defines permissions & roles| authz
-  modules -->|defines permissions & roles| authz
-  platform -->|checks permissions via API| authz
-  modules -->|checks permissions via API| authz
-  admin -->|manages user-role assignment| authz
+  platform -- "queries permissions (python API)" --> authz
+  modules -- "queries permissions (python API)" --> authz
+  mfes -- "queries permissions (REST API)" --> authz
+  admin -- "manages user-role assignments (REST API)" --> authz
 ```
+
+</div>
 
 ---
 
@@ -837,7 +901,17 @@ layout: api-section
 
 Questions? Feedback? Find me after the talk.
 
-<img src="/qr/sessionizefeedback.png" class="w-64 mt-4 -mb-10vh" />
+<div class="flex flex-row gap-8">
+  <div class="relative">
+    <small class="absolute top-5 left-0 text-center w-64 z-10">Feedback</small>
+    <img src="/qr/sessionizefeedback.png" class="w-64 mt-4 -mb-10vh" />
+  </div>
+  <div class="relative">
+    <small class="absolute top-5 left-0 text-center w-64 z-10">Slides</small>
+    <img src="/qr/rbac2026.png" class="w-64 mt-4 -mb-10vh" />
+    <small class="absolute top-62 left-0 text-center w-64 z-10">https://rodmgwgu.github.io/rbac2026</small>
+  </div>
+</div>
 
 ---
 
